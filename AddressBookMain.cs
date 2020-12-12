@@ -11,7 +11,7 @@ namespace AddressBookApp
 			while (flag)
 			{
 				Console.WriteLine("******WELCOME TO ADDRESS BOOK******");
-				Console.WriteLine("1. Add_Contact\n2. Display_Contact\n3. Update_Contact\n4. Exit");
+				Console.WriteLine("1. Add_Contact\n2. Display_Contact\n3. Update_Contact\n4. Delet_Contact\n5. Exit");
 				Console.WriteLine("Enter Your Choice:");
 				int input = Convert.ToInt32(Console.ReadLine());
 				switch (input)
@@ -29,6 +29,11 @@ namespace AddressBookApp
 						EditContact(fname);
 						break;
 					case 4:
+						Console.Write("Enter FirstName U want to Delet : ");
+						string deletName = Console.ReadLine();
+						DeletContact(deletName);
+						break;
+					case 5:
 						flag = false;
 						break;
 					default:
@@ -104,6 +109,27 @@ namespace AddressBookApp
 				else if (size == check)
 				{
 					Console.WriteLine(fname + " not found in addressbook...");
+					break;
+				}
+			}
+		}
+		public static void DeletContact(string Fname)
+		{
+			int size = userList.Count;
+			int check = 0;
+			foreach (ContactPerson user in userList)
+			{
+				check++;
+				if (user.firstName.Equals(Fname))
+				{
+					userList.Remove(user);
+					Console.WriteLine("Contact Deleted Successfully...");
+					Display();
+					break;
+				}
+				else if (size == check)
+				{
+					Console.WriteLine(Fname + " not found in addressbook...");
 					break;
 				}
 			}
