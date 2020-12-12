@@ -11,7 +11,7 @@ namespace AddressBookApp
 			while (flag)
 			{
 				Console.WriteLine("******WELCOME TO ADDRESS BOOK******");
-				Console.WriteLine("1. Add_Contact \n2.  Exit");
+				Console.WriteLine("1. Add_Contact \n2. Display_Contact \n3. Exit");
 				Console.WriteLine("Enter Your Choice:");
 				int input = Convert.ToInt32(Console.ReadLine());
 				switch (input)
@@ -20,8 +20,10 @@ namespace AddressBookApp
 						addUser();
 						Console.WriteLine("Details Added Successfully. \n");
 						break;
-					
 					case 2:
+						Display();
+						break;
+					case 3:
 						flag = false;
 						break;
 					default:
@@ -53,6 +55,18 @@ namespace AddressBookApp
 			ContactPerson user = new ContactPerson(firstName, lastName, address, state, contact, zip);
 			userList.AddLast(user);
 			user.print();
+		}
+		public static void Display()
+		{
+			Console.WriteLine("------------------------------------------------------------");
+			Console.WriteLine("FirstName    LastName     City     State   Contact      Zip");
+			Console.WriteLine("------------------------------------------------------------");
+			foreach (var item in userList)
+			{
+				ContactPerson p = item;
+				p.print();
+			}
+			Console.WriteLine("------------------------------------------------------------");
 		}
 		public static bool CheckContact(string fname)
 		{
