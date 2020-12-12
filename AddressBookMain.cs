@@ -11,7 +11,7 @@ namespace AddressBookApp
 			while (flag)
 			{
 				Console.WriteLine("******WELCOME TO ADDRESS BOOK******");
-				Console.WriteLine("1. Add_Contact\n2. Display_Contact\n3. Exit");
+				Console.WriteLine("1. Add_Contact\n2. Display_Contact\n3. Update_Contact\n4. Exit");
 				Console.WriteLine("Enter Your Choice:");
 				int input = Convert.ToInt32(Console.ReadLine());
 				switch (input)
@@ -24,6 +24,11 @@ namespace AddressBookApp
 						Display();
 						break;
 					case 3:
+						Console.WriteLine("Enter FirstName U want To Update");
+						string fname = Console.ReadLine();
+						EditContact(fname);
+						break;
+					case 4:
 						flag = false;
 						break;
 					default:
@@ -81,6 +86,27 @@ namespace AddressBookApp
 				}
 			}
 			return check;
+		}
+		public static void EditContact(string fname)
+		{
+			int size = userList.Count;
+			int check = 0;
+			foreach (ContactPerson user in userList)
+			{
+				check++;
+				if (user.firstName.Equals(fname))
+				{
+					addUser();
+					userList.Remove(user);
+					Console.WriteLine("Contact Updated Successfully...");
+					break;
+				}
+				else if (size == check)
+				{
+					Console.WriteLine(fname + " not found in addressbook...");
+					break;
+				}
+			}
 		}
 	}
 }
