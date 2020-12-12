@@ -7,13 +7,11 @@ namespace AddressBookApp
 		public static Dictionary<string, MultipleAddressBook> addressBookDict = new Dictionary<string, MultipleAddressBook>();
 		public static void Main(string[] args)
 		{
-
 			bool flag = true;
-
 			while (flag)
 			{
 				Console.WriteLine();
-				Console.WriteLine("******WELCOME TO ADDRESS BOOK******");
+				Console.WriteLine("********WELCOME TO ADDRESS BOOK********");
 				Console.WriteLine("1. Create_AddressBooks \n2. Open_AddressBooks \n3. DeletAddressBook \n4. Exit");
 				int choice = Convert.ToInt32(Console.ReadLine());
 				int size = addressBookDict.Count;
@@ -57,7 +55,6 @@ namespace AddressBookApp
 								Console.Clear();
 								Console.WriteLine("AddressBook not present!!!!!");
 							}
-
 						}
 						break;
 					case 3:
@@ -97,7 +94,6 @@ namespace AddressBookApp
 			bool check = false;
 			foreach (var address in addressBookDict)
 			{
-
 				if (addressBookDict.ContainsKey(bookName))
 				{
 					check = true;
