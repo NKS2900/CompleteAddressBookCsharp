@@ -10,7 +10,7 @@ namespace AddressBookApp
 			bool flag = true;
 			while (flag)
 			{
-				Console.WriteLine("******WELCOME TO ADDRESS BOOK******");
+				Console.WriteLine("*******WELCOME TO ADDRESS BOOK*******");
 				Console.WriteLine("1. Add_Contact\n2. Display_Contact\n3. Update_Contact\n4. Delet_Contact\n5. Exit");
 				Console.WriteLine("Enter Your Choice:");
 				int input = Convert.ToInt32(Console.ReadLine());
