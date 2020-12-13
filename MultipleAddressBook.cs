@@ -140,5 +140,27 @@ namespace AddressBookApp
 			else
 				return false;
 		}
+		public void CountContact(string countPlace)
+		{
+			int count = 0;
+			bool exits = isPlaceExist(countPlace);
+			if (exits)
+			{
+				Console.WriteLine("Contacts From Place: " + countPlace);
+				foreach (ContactPerson user in userList.FindAll(x => x.address.Equals(countPlace)).ToList())
+				{
+					count++;
+				}
+				foreach (ContactPerson user in userList.FindAll(x => x.state.Equals(countPlace)).ToList())
+				{
+					count++;
+				}
+				Console.WriteLine($"Total Contacts From {countPlace} : {count}");
+			}
+			else
+			{
+				Console.WriteLine($"Contect not Found From {0}", countPlace);
+			}
+		}
 	}
 }
