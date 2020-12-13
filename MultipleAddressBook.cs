@@ -108,16 +108,24 @@ namespace AddressBookApp
 		}
 		public void SerchContact(string place)
 		{
+			List<string> person = new List<string>();
 			bool exits = isPlaceExist(place);
 			if (exits)
 			{
+				Console.WriteLine("Contacts From Place: "+place);
 				foreach (ContactPerson user in userList.FindAll(x => x.address.Equals(place)).ToList())
 				{
-					user.print();
+					string name = user.firstName + " " + user.lastName;
+					person.Add(name);
 				}
 				foreach (ContactPerson user in userList.FindAll(x => x.state.Equals(place)).ToList())
 				{
-					user.print();
+					string name = user.firstName + " " + user.lastName;
+					person.Add(name);
+				}
+				foreach (string val in person)
+				{
+					Console.WriteLine(val);
 				}
 			}
 			else

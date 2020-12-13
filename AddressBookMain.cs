@@ -152,13 +152,14 @@ namespace AddressBookApp
 					case 4:
 						Console.WriteLine("Enter FirstName U want To Update");
 						string fname = Console.ReadLine();
-						addressBookDict[bookname].DeletContact(fname);
+						addressBookDict[bookname].EditContact(fname);
 						break;
 					case 5:
 						Console.Write("Enter City Or State name U want To Serch : ");
 						string place = Console.ReadLine();
 						foreach (var addbook in addressBookDict.Keys)
 						{
+							Console.WriteLine("Contacts From AddressBook : "+addbook);
 							addressBookDict[addbook].SerchContact(place);
 						}
 						break;
