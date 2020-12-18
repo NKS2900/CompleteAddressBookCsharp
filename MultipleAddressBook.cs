@@ -180,7 +180,7 @@ namespace AddressBookApp
 				case 1:
 					foreach (ContactPerson getContacts in userList)
 					{
-						string sortByFirstName = getContacts.firstName.ToString();
+						string sortByFirstName = getContacts.firstName.ToString();	
 						sortedList.Add(sortByFirstName);
 					}					
 					break;
@@ -188,16 +188,16 @@ namespace AddressBookApp
 				case 2:
 					foreach (ContactPerson getContacts in userList)
 					{
-						string sortByFirstName = getContacts.address.ToString();
-						sortedList.Add(sortByFirstName);
+						string sortByCity = getContacts.address.ToString();
+						sortedList.Add(sortByCity);
 					}
 					break;
 
 				case 3:
 					foreach (ContactPerson getContacts in userList)
 					{
-						string sortByFirstName = getContacts.state.ToString();
-						sortedList.Add(sortByFirstName);
+						string sortByState = getContacts.state.ToString();
+						sortedList.Add(sortByState);
 					}
 					break;
 			}
