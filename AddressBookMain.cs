@@ -182,10 +182,26 @@ namespace AddressBookApp
 						addressBookDict[bookname].EditContact(fname);
 						break;
 					case 5:
+						Console.WriteLine("Chooose option TO Sort Contacts by \n 1.FirstName \n2.City \n3. State");
+						int option = Convert.ToInt32(Console.ReadLine());
 						Console.WriteLine("---------------------------");
 						Console.WriteLine("Alphabetically_Sorted_List");
 						Console.WriteLine("---------------------------");
-						addressBookDict[bookname].SortAlphabetically();
+						switch (option)
+						{
+							case 1:			
+								addressBookDict[bookname].SortAlphabetically(1);								
+								break;
+							case 2:
+								addressBookDict[bookname].SortAlphabetically(2);
+								break;
+							case 3:
+								addressBookDict[bookname].SortAlphabetically(3);
+								break;
+							default:
+								Console.WriteLine("Invalid option....");
+								break;
+						}
 						Console.WriteLine("---------------------------");
 						break;
 					case 6:

@@ -13,6 +13,15 @@ namespace AddressBookApp
 			this.userList = new List<ContactPerson>();
 		}
 		
+		/// <summary>
+		/// Adding Contacts in List.
+		/// </summary>
+		/// <param name="firstName">FirstName</param>
+		/// <param name="lastName">LastName</param>
+		/// <param name="address">City</param>
+		/// <param name="state">State</param>
+		/// <param name="contact">Contact no.</param>
+		/// <param name="zip">Pincode</param>
 		public void AddContact(String firstName, String lastName, String address, String state, String contact, String zip)
 		{
 			bool duplicate = equals(firstName);
@@ -163,13 +172,34 @@ namespace AddressBookApp
 			}
 		}
 
-		public void SortAlphabetically()
+		public void SortAlphabetically(int choice1)
 		{
 			List<string> sortedList = new List<string>();
-			foreach (ContactPerson getContacts in userList)
+			switch (choice1)
 			{
-				string sortByFirstName = getContacts.firstName.ToString();
-				sortedList.Add(sortByFirstName);
+				case 1:
+					foreach (ContactPerson getContacts in userList)
+					{
+						string sortByFirstName = getContacts.firstName.ToString();
+						sortedList.Add(sortByFirstName);
+					}					
+					break;
+
+				case 2:
+					foreach (ContactPerson getContacts in userList)
+					{
+						string sortByFirstName = getContacts.address.ToString();
+						sortedList.Add(sortByFirstName);
+					}
+					break;
+
+				case 3:
+					foreach (ContactPerson getContacts in userList)
+					{
+						string sortByFirstName = getContacts.state.ToString();
+						sortedList.Add(sortByFirstName);
+					}
+					break;
 			}
 			sortedList.Sort();
 			foreach (string sortedContact in sortedList)
