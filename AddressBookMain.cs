@@ -14,7 +14,7 @@ namespace AddressBookApp
 			{
 				Console.WriteLine();
 				Console.WriteLine("********WELCOME TO ADDRESS BOOK********");
-				Console.WriteLine("1. Create_AddressBooks \n2. Open_AddressBooks \n3. DeletAddressBook \n4. Exit");
+				Console.WriteLine("1. Create_AddressBooks \n2. Open_AddressBooks \n3. Count_TotalContacts \n4. Serch_FromAllContact \n5. DeletAddressBook \n6. Exit");
 				int choice = Convert.ToInt32(Console.ReadLine());
 				int size = addressBookDict.Count;
 				switch (choice)
@@ -59,7 +59,31 @@ namespace AddressBookApp
 							}
 						}
 						break;
+
 					case 3:
+						Console.Write("Enter City or State want to Count : ");
+						string countplace = Console.ReadLine();
+						foreach (var addbook in addressBookDict.Keys)
+						{
+							Console.WriteLine("Contacts From AddressBook : " + addbook);
+							addressBookDict[addbook].CountContact(countplace);
+						}
+						Console.WriteLine("----------------------------------------");
+						break;
+
+					case 4:
+						Console.Write("Enter City Or State name U want To Serch : ");
+						string place = Console.ReadLine();
+						Console.WriteLine("----------------------------------------");
+						foreach (var addbook in addressBookDict.Keys)
+						{
+							Console.WriteLine("Contacts From AddressBook : " + addbook);
+							addressBookDict[addbook].SerchContact(place);
+							Console.WriteLine("----------------------------------------");
+						}
+						break;
+
+					case 5:
 						Console.WriteLine($"You have {size} AddressBook.");
 						foreach (var address in addressBookDict)
 						{
@@ -86,8 +110,11 @@ namespace AddressBookApp
 							}
 						}
 						break;
-					case 4:
+					case 6:
 						flag = false;
+						break;
+					default:
+						Console.WriteLine("Invalid Option...");
 						break;
 				}
 			}
@@ -126,11 +153,11 @@ namespace AddressBookApp
 		public static void MainMenu(string bookname)
 		{
 
-			bool flag = true;
-			while (flag)
+			bool signal = true;
+			while (signal)
 			{
 				Console.WriteLine("******WELCOME TO ADDRESS BOOK******");
-				Console.WriteLine("1. Add_Contact \n2. Display_Contact \n3. Delet_Contact \n4. Update_Contact \n5. Serch_FromAllContact \n6. Count_Contacts\n7. Exit");
+				Console.WriteLine("1. Add_Contact \n2. Display_Contact \n3. Delet_Contact \n4. Update_Contact  \n5. Sort_Contacts \n6. Exit");
 				Console.WriteLine("Enter Your Choice:");
 				int input = Convert.ToInt32(Console.ReadLine());
 				switch (input)
@@ -155,25 +182,14 @@ namespace AddressBookApp
 						addressBookDict[bookname].EditContact(fname);
 						break;
 					case 5:
-						Console.Write("Enter City Or State name U want To Serch : ");
-						string place = Console.ReadLine();
-						foreach (var addbook in addressBookDict.Keys)
-						{
-							Console.WriteLine("Contacts From AddressBook : "+addbook);
-							addressBookDict[addbook].SerchContact(place);
-						}
+						Console.WriteLine("---------------------------");
+						Console.WriteLine("Alphabetically_Sorted_List");
+						Console.WriteLine("---------------------------");
+						addressBookDict[bookname].SortAlphabetically();
+						Console.WriteLine("---------------------------");
 						break;
 					case 6:
-						Console.Write("Enter City or State want to Count : ");
-						string countplace = Console.ReadLine();
-						foreach (var addbook in addressBookDict.Keys)
-						{
-							Console.WriteLine("Contacts From AddressBook : " + addbook);
-							addressBookDict[addbook].CountContact(countplace);
-						}
-						break;
-					case 7:
-						flag = false;
+						signal = false;
 						break;
 					default:
 						Console.WriteLine("Invalid option ???");
