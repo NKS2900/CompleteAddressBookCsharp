@@ -23,6 +23,7 @@ namespace AddressBookApp
 						Console.Write("Enter AddressBook Name : ");
 						string book = Console.ReadLine();
 						bool check = DuplicatAddress(book);
+
 						if (check)
 						{
 							Console.Write("Enter AddressBook Name again : ");
@@ -149,6 +150,7 @@ namespace AddressBookApp
 			Console.Write("Enter zip : ");
 			string zip = Console.ReadLine();
 			MultAddObj.AddContact(firstName, lastName, address, state, contact, zip);
+
 		}
 		public static void MainMenu(string bookname)
 		{
@@ -182,7 +184,7 @@ namespace AddressBookApp
 						addressBookDict[bookname].EditContact(fname);
 						break;
 					case 5:
-						Console.WriteLine("Chooose option TO Sort Contacts by \n 1.FirstName \n2.City \n3. State");
+						Console.WriteLine("Chooose option TO Sort Contacts by \n1. FirstName \n2. City \n3. State");
 						int option = Convert.ToInt32(Console.ReadLine());
 						Console.WriteLine("---------------------------");
 						Console.WriteLine("Alphabetically_Sorted_List");

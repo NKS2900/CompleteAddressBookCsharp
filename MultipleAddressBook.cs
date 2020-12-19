@@ -174,38 +174,39 @@ namespace AddressBookApp
 
 		public void SortAlphabetically(int choice1)
 		{
-			List<string> sortedList = new List<string>();
+			Console.WriteLine("------------------------------------------------------------");
+			Console.WriteLine("FirstName    LastName     City     State   Contact      Zip");
+			Console.WriteLine("------------------------------------------------------------");
 			switch (choice1)
 			{
 				case 1:
-					foreach (ContactPerson getContacts in userList)
+					userList.Sort(new Comparison<ContactPerson>((x, y) => string.Compare(x.firstName, y.firstName)));
+					foreach (ContactPerson contact in userList)
 					{
-						string sortByFirstName = getContacts.firstName.ToString();	
-						sortedList.Add(sortByFirstName);
-					}					
+						contact.print();
+					}
 					break;
 
 				case 2:
-					foreach (ContactPerson getContacts in userList)
+					userList.Sort(new Comparison<ContactPerson>((x, y) => string.Compare(x.address, y.address)));
+					foreach (ContactPerson contact in userList)
 					{
-						string sortByCity = getContacts.address.ToString();
-						sortedList.Add(sortByCity);
+						contact.print();
 					}
 					break;
 
 				case 3:
-					foreach (ContactPerson getContacts in userList)
+					userList.Sort(new Comparison<ContactPerson>((x, y) => string.Compare(x.state, y.state)));
+					foreach (ContactPerson contact in userList)
 					{
-						string sortByState = getContacts.state.ToString();
-						sortedList.Add(sortByState);
+						contact.print();
 					}
 					break;
-			}
-			sortedList.Sort();
-			foreach (string sortedContact in sortedList)
-			{
-				Console.WriteLine(sortedContact);
-			}
+			}			
+		}
+		public void writeInTxtFile()
+		{
+			FileWriter.WriteUsingStreamWriter(userList);
 		}
 	}
 }
