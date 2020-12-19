@@ -204,9 +204,5 @@ namespace AddressBookApp
 					break;
 			}			
 		}
-		public void writeInTxtFile()
-		{
-			FileWriter.WriteUsingStreamWriter(userList);
-		}
 	}
 }
