@@ -1,1 +1,6 @@
-﻿
+FName	LName	City	State	Contact	Zip
+nijam	sayyad	beed	maha	34343	3454
+dipak	nagar	parli	maha	43434	5854
+mahesh	kande	pune	maha	34342	4342
+imran	shaikh	pune	maha	33233	3434
+vivek	jadhav	latur	maha	43432	4343
