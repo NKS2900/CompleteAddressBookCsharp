@@ -206,14 +206,22 @@ namespace AddressBookApp
 		}
 		public void writeInTxtFile()
 		{
-			FileWriter.WriteUsingStreamWriter(userList);
-			Console.WriteLine("Contacts Stored in TextFile.");
+			FileWriter.WriteUsingStreamWriter(userList);			
 		}
-
 
 		public void readFromTxtFile()
 		{
 			FileWriter.readFile();
+		}
+
+		public void writeInCsvFile()
+		{
+			FileWriter.csvFileWriter(userList);
+		}
+
+		public void readFromCsvFile()
+		{
+			FileWriter.readFromCSVFile();
 		}
 	}
 }
