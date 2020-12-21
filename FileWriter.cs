@@ -1,7 +1,8 @@
 ﻿using System;
+using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Text;
 using System.IO;
+
 
 namespace AddressBookApp
 {
@@ -9,7 +10,7 @@ namespace AddressBookApp
     {
         public static string path = @"C:\Users\NKS\Desktop\CSharp Git problems\CompleteAddressBookCsharp\AddressBookFile.txt";
         public static string csvPath= @"C:\Users\NKS\Desktop\CSharp Git problems\CompleteAddressBookCsharp\CSV_AddressBook.csv";
-
+        public static string jsonPath= @"C:\Users\NKS\Desktop\CSharp Git problems\CompleteAddressBookCsharp\JSON_AddressBook.json";
         /// <summary>
         /// write Contacts in TextFile.
         /// </summary>
@@ -110,6 +111,47 @@ namespace AddressBookApp
             else
             {
                 Console.WriteLine("File not avilable..");
+            }
+        }
+
+        /// <summary>
+        /// Writing contacts in Json file.
+        /// </summary>
+        /// <param name="contacts"></param>
+        public static void WriteContactsInJSONFile(List<ContactPerson> contacts)
+        {
+            if (File.Exists(jsonPath))
+            {
+                JsonSerializer jsonSerializer = new JsonSerializer();
+                using (StreamWriter streamWriter = new StreamWriter(jsonPath))
+                using (JsonWriter writer = new JsonTextWriter(streamWriter))
+                {
+                    jsonSerializer.Serialize(writer, contacts);
+                }
+                Console.WriteLine("Conatact stored in Json File...");
+            }
+            else
+            {
+                Console.WriteLine("File not found...");
+            }
+        }
+
+        /// <summary>
+        /// Reading contacts from Json file.
+        /// </summary>
+        public static void ReadContactsFromJSONFile()
+        {
+            if (File.Exists(jsonPath))
+            {
+                IList<ContactPerson> contactsRead = JsonConvert.DeserializeObject<IList<ContactPerson>>(File.ReadAllText(jsonPath));
+                foreach (ContactPerson contact in contactsRead)
+                {
+                   contact.print();
+                }
+            }
+            else
+            {
+                Console.WriteLine("File not found...");
             }
         }
     }

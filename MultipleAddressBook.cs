@@ -223,5 +223,16 @@ namespace AddressBookApp
 		{
 			FileWriter.readFromCSVFile();
 		}
+
+		public void writeInJsonFile()
+		{
+			FileWriter.WriteContactsInJSONFile(userList);
+		}
+
+
+		public void readInJsonFile()
+		{
+			FileWriter.ReadContactsFromJSONFile();
+		}
 	}
 }

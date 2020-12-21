@@ -14,7 +14,8 @@ namespace AddressBookApp
 			{
 				Console.WriteLine();
 				Console.WriteLine("********WELCOME TO ADDRESS BOOK********");
-				Console.WriteLine("1. Create_AddressBooks \n2. Open_AddressBooks \n3. Count_TotalContacts \n4. Serch_FromAllContact \n5. DeletAddressBook \n6. StoreContactsIn_TextFile \n7. ReadContactsFrom_TextFile \n8. StoreContactsIn_CsvFile \n9. ReadContactsFrom_CsvFile \n10. Exit");
+				Console.WriteLine("1. Create_AddressBooks \n2. Open_AddressBooks \n3. Count_TotalContacts \n4. Serch_FromAllContact \n5. DeletAddressBook " +
+					"\n6. StoreContactsIn_TextFile \n7. ReadContactsFrom_TextFile \n8. StoreContactsIn_CsvFile \n9. ReadContactsFrom_CsvFile \n10. StoreContactsIn_JsonFile \n11. ReadConatctsFrom_JsonFile \n12. Exit");
 				int choice = Convert.ToInt32(Console.ReadLine());
 				int size = addressBookDict.Count;
 				switch (choice)
@@ -156,6 +157,16 @@ namespace AddressBookApp
 						addressBookDict[readContact].readFromCsvFile();
 						break;
 					case 10:
+						Console.Write("Enter Address_BookName : ");
+						string writeJson = Console.ReadLine();
+						addressBookDict[writeJson].writeInJsonFile();
+						break;						
+					case 11:
+						Console.Write("Enter Address_BookName : ");
+						string readJson = Console.ReadLine();
+						addressBookDict[readJson].readInJsonFile();
+						break;				
+					case 12:
 						flag = false;
 						break;
 					default:
