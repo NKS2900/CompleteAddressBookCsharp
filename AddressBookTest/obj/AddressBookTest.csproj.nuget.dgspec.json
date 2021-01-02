@@ -1,0 +1,148 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\NKS\\Desktop\\CSharp Git problems\\CompleteAddressBookCsharp\\AddressBookTest\\AddressBookTest.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\NKS\\Desktop\\CSharp Git problems\\CompleteAddressBookCsharp\\AddressBookTest\\AddressBookTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\NKS\\Desktop\\CSharp Git problems\\CompleteAddressBookCsharp\\AddressBookTest\\AddressBookTest.csproj",
+        "projectName": "AddressBookTest",
+        "projectPath": "C:\\Users\\NKS\\Desktop\\CSharp Git problems\\CompleteAddressBookCsharp\\AddressBookTest\\AddressBookTest.csproj",
+        "packagesPath": "C:\\Users\\NKS\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\NKS\\Desktop\\CSharp Git problems\\CompleteAddressBookCsharp\\AddressBookTest\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\NKS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\NKS\\Desktop\\CSharp Git problems\\CompleteAddressBookCsharp\\CompleteAddressBookCsharp\\AddressBookApp.csproj": {
+                "projectPath": "C:\\Users\\NKS\\Desktop\\CSharp Git problems\\CompleteAddressBookCsharp\\CompleteAddressBookCsharp\\AddressBookApp.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.7.1, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[1.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\NKS\\Desktop\\CSharp Git problems\\CompleteAddressBookCsharp\\CompleteAddressBookCsharp\\AddressBookApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\NKS\\Desktop\\CSharp Git problems\\CompleteAddressBookCsharp\\CompleteAddressBookCsharp\\AddressBookApp.csproj",
+        "projectName": "AddressBookApp",
+        "projectPath": "C:\\Users\\NKS\\Desktop\\CSharp Git problems\\CompleteAddressBookCsharp\\CompleteAddressBookCsharp\\AddressBookApp.csproj",
+        "packagesPath": "C:\\Users\\NKS\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\NKS\\Desktop\\CSharp Git problems\\CompleteAddressBookCsharp\\CompleteAddressBookCsharp\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\NKS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

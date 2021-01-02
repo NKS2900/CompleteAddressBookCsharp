@@ -211,6 +211,8 @@ namespace AddressBookApp
 
 		public void readFromTxtFile()
 		{
+			Console.Clear();
+			Console.WriteLine("Contacts_From_Text_File");
 			FileWriter.readFile();
 		}
 
@@ -221,6 +223,8 @@ namespace AddressBookApp
 
 		public void readFromCsvFile()
 		{
+			Console.Clear();
+			Console.WriteLine("Contacts_From_CSV_File");
 			FileWriter.readFromCSVFile();
 		}
 
@@ -229,9 +233,10 @@ namespace AddressBookApp
 			FileWriter.WriteContactsInJSONFile(userList);
 		}
 
-
 		public void readInJsonFile()
 		{
+			Console.Clear();
+			Console.WriteLine("Contacts_From_JsonFile");
 			FileWriter.ReadContactsFromJSONFile();
 		}
 	}
