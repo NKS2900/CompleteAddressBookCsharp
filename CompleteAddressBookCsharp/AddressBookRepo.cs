@@ -104,5 +104,43 @@ namespace AddressBookApp
                 throw new Exception(e.Message);
             }
         }
+
+        public int getContactDataWithGivenDate()
+        {
+            try
+            {
+                int count = 0;
+                AddressBookModel employeeModel = new AddressBookModel();
+                using (this.connection)
+                {
+                    string query = @"select count(first_name) from address_book where insertDate between cast('2015-01-01' as date) and CAST('2020-01-01' as date)";
+                    SqlCommand cmd = new SqlCommand(query, this.connection);
+                    this.connection.Open();
+                    SqlDataReader sqlDataReader = cmd.ExecuteReader();
+                    if (sqlDataReader.HasRows)
+                    {
+                        while (sqlDataReader.Read())
+                        {
+                            count = sqlDataReader.GetInt32(0);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No Data Found");
+                    }
+                    sqlDataReader.Close();
+                    this.connection.Close();
+                    return count;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                this.connection.Close();
+            }
+        }
     }
 }

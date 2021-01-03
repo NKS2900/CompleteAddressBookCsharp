@@ -8,9 +8,9 @@ namespace AddressBookApp
 {
     class FileWriter
     {
-        public static string path = @"C:\Users\NKS\Desktop\CSharp Git problems\CompleteAddressBookCsharp\Files\AddressBookFile.txt";
-        public static string csvPath= @"C:\Users\NKS\Desktop\CSharp Git problems\CompleteAddressBookCsharp\Files\CSV_AddressBook.csv";
-        public static string jsonPath= @"C:\Users\NKS\Desktop\CSharp Git problems\CompleteAddressBookCsharp\Files\JSON_AddressBook.json";
+        public static string path = @"C:\Users\NKS\Desktop\CSharp Git problems\CompleteAddressBookCsharp\CompleteAddressBookCsharp\Files\AddressBookFile.txt";
+        public static string csvPath= @"C:\Users\NKS\Desktop\CSharp Git problems\CompleteAddressBookCsharp\CompleteAddressBookCsharp\Files\CSV_AddressBook.csv";
+        public static string jsonPath= @"C:\Users\NKS\Desktop\CSharp Git problems\CompleteAddressBookCsharp\CompleteAddressBookCsharp\Files\JSON_AddressBook.json";
         /// <summary>
         /// write Contacts in TextFile.
         /// </summary>
