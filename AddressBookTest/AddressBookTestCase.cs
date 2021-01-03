@@ -37,8 +37,6 @@ namespace AddressBookTest
         {
             bool expected = true;
             AddressBookRepo addrepo = new AddressBookRepo();
-            AddressBookModel addmodel = new AddressBookModel();
-
             AddressBookModel editModel = new AddressBookModel();
             editModel.First_Name = "Dipak";
             editModel.Last_Name = "Nagar";
@@ -60,6 +58,18 @@ namespace AddressBookTest
             AddressBookRepo addrepo = new AddressBookRepo();
             int count = addrepo.getContactDataWithGivenDate();
             int expected = 5;
+            Assert.AreEqual(expected, count);
+        }
+
+        /// <summary>
+        /// Retrive contacts from City or State.
+        /// </summary>
+        [TestMethod]
+        public void GivenAddressBook_returnNumberOf_ContactsFromPerticularCityOrState()
+        {
+            AddressBookRepo addrepo = new AddressBookRepo();
+            int count = addrepo.RetrieveContactFromPerticularCityOrState();
+            int expected = 7;
             Assert.AreEqual(expected, count);
         }
     }
