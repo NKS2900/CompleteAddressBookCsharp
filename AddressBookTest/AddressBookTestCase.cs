@@ -72,5 +72,26 @@ namespace AddressBookTest
             int expected = 7;
             Assert.AreEqual(expected, count);
         }
+
+        /// <summary>
+        /// add new contact in addressbook
+        /// </summary>
+        [TestMethod]
+        public void GivenAddressBooks_AddNewRecord_ThenShouldAddContactInAddressBook()
+        {
+            bool expected = true;
+            AddressBookRepo addrepo = new AddressBookRepo();
+            AddressBookModel addModel = new AddressBookModel();
+            addModel.First_Name = "mangesh";
+            addModel.Last_Name = "joshi";
+            addModel.City = "Latur";
+            addModel.State = "Maharashtra";
+            addModel.Email = "dpk@gmail.com";
+            addModel.BookName = "address002";
+            addModel.AddressbookType = "office";
+            addModel.idate= new System.DateTime(2010, 11, 02);
+            bool result = addrepo.EditContactUsingFirstName(addModel);
+            Assert.AreEqual(expected, result);
+        }
     }
 }
