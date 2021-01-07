@@ -92,5 +92,28 @@ namespace RestSharpTestCases
             List<Address> dataResorce = JsonConvert.DeserializeObject<List<Address>>(response.Content);
             Assert.AreEqual(8, dataResorce.Count);
         }
+
+        /// <summary>
+        /// Update Contact on json Server using REST_API.
+        /// </summary>
+        [TestMethod]
+        public void GivenAddress_WhenUpdate_ThenShouldReturnUpdatedContact()
+        {
+            RestRequest request = new RestRequest("/address/1", Method.PUT);
+            JObject jObjectBody = new JObject();
+            jObjectBody.Add("firstName", "Nijam");
+            jObjectBody.Add("lastName", "Sayyad");
+            jObjectBody.Add("address", "Latur");
+            jObjectBody.Add("contact", "9874563210");
+            jObjectBody.Add("state", "MAHA");
+            jObjectBody.Add("zip", "415263");
+            request.AddParameter("application/json", jObjectBody, ParameterType.RequestBody);
+            IRestResponse response = client.Execute(request);
+            Assert.AreEqual(response.StatusCode, HttpStatusCode.OK);
+            Address dataResorce = JsonConvert.DeserializeObject<Address>(response.Content);
+            Assert.AreEqual("Nijam", dataResorce.firstName);
+            Assert.AreEqual("Sayyad", dataResorce.lastName);
+            Console.WriteLine(response.Content);
+        }
     }
 }

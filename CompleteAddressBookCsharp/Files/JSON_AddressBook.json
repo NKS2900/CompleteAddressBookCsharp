@@ -1,13 +1,13 @@
 {
   "address": [
     {
-      "id": 1,
-      "firstName": "nijam",
-      "lastName": "sayyad",
-      "address": "beed",
-      "contact": "34343",
-      "state": "maha",
-      "zip": "4343"
+      "firstName": "Nijam",
+      "lastName": "Sayyad",
+      "address": "Latur",
+      "contact": "9874563210",
+      "state": "MAHA",
+      "zip": "415263",
+      "id": 1
     },
     {
       "firstName": "Dipak",
