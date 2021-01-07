@@ -115,5 +115,17 @@ namespace RestSharpTestCases
             Assert.AreEqual("Sayyad", dataResorce.lastName);
             Console.WriteLine(response.Content);
         }
+
+        /// <summary>
+        /// Delete Contact from json_Server using RESTSharp_API.
+        /// </summary>
+        [TestMethod]
+        public void GivenContact_WhenDelete_ThenShouldReturnSuccess()
+        {
+            RestRequest request = new RestRequest("/address/6", Method.DELETE);
+            IRestResponse response = client.Execute(request);
+            Assert.AreEqual(response.StatusCode, HttpStatusCode.OK);
+            Console.WriteLine(response.Content);
+        }
     }
 }
