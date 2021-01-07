@@ -35,6 +35,42 @@
       "state": "maha",
       "zip": "145263",
       "id": 4
+    },
+    {
+      "firstName": "Vivek",
+      "lastName": "Jadhav",
+      "address": "Beed",
+      "contact": "7896541230",
+      "state": "MAHA",
+      "zip": "789654",
+      "id": 5
+    },
+    {
+      "firstName": "Ajay",
+      "lastName": "Kamble",
+      "address": "Latur",
+      "contact": "4196541230",
+      "state": "MAHA",
+      "zip": "896547",
+      "id": 6
+    },
+    {
+      "firstName": "Pandit",
+      "lastName": "Walde",
+      "address": "Parli",
+      "contact": "8896541230",
+      "state": "MAHA",
+      "zip": "236541",
+      "id": 7
+    },
+    {
+      "firstName": "Swati",
+      "lastName": "Mali",
+      "address": "Pune",
+      "contact": "9896541230",
+      "state": "MAHA",
+      "zip": "895623",
+      "id": 8
     }
   ]
 }
