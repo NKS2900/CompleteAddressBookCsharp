@@ -1,1 +1,40 @@
-[{"firstName":"nijma","lastName":"sayyad","address":"beed","contact":"34343","state":"maha","zip":"4343"},{"firstName":"dipak","lastName":"nagar","address":"parli","contact":"43443","state":"maha","zip":"4343"}]
+{
+  "address": [
+    {
+      "id": 1,
+      "firstName": "nijam",
+      "lastName": "sayyad",
+      "address": "beed",
+      "contact": "34343",
+      "state": "maha",
+      "zip": "4343"
+    },
+    {
+      "firstName": "Dipak",
+      "lastName": "Nagar",
+      "addrss": "Latur",
+      "contact": "7894561230",
+      "state": "maha",
+      "zip": "145263",
+      "id": 2
+    },
+    {
+      "firstName": "Imran",
+      "lastName": "Shaikh",
+      "addrss": "pune",
+      "contact": "1452637890",
+      "state": "maha",
+      "zip": "145263",
+      "id": 3
+    },
+    {
+      "firstName": "vikas",
+      "lastName": "kamle",
+      "addrss": "Latur",
+      "contact": "7894561230",
+      "state": "maha",
+      "zip": "145263",
+      "id": 4
+    }
+  ]
+}
